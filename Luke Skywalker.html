@@ -1,0 +1,505 @@
+<html style="margin: 0; height: 100%;">
+
+<head>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <script> 
+        /* below code is to make header sticky */
+        var navbar;
+        var sticky;
+        document.addEventListener("DOMContentLoaded", function (event) {
+            navbar = document.getElementById("title-container");
+            sticky = navbar.offsetTop;
+        });
+        window.onscroll = function () { addOrRemoveSticky() };
+        function addOrRemoveSticky() {
+
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+    <style type="text/css">
+        html {
+            margin: 0;
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+            font-family: sans-serif;
+            margin: 0px;
+            color: #555559;
+            background: #fafafa;
+            overflow-x: hidden;
+        }
+
+        #main {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .image-rows {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .photo-row {
+            display: flex;
+            overflow-x: hidden;
+        }
+
+        .photo-row:before {
+            content: "";
+            position: absolute;
+            height: 150px;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: linear-gradient(180deg, rgba(0, 0, 0, .85), transparent);
+            opacity: .6;
+        }
+
+        .photo-row img {
+            width: 250px;
+            min-width: 250px;
+            height: 250px;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        #title-container {
+            flex-direction: row;
+            box-sizing: border-box;
+            display: flex;
+            max-height: 100%;
+            place-content: center;
+            align-items: center;
+            height: 100px;
+            margin-bottom: 4px;
+            background-color: #fff;
+            box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+        }
+
+        #title {
+            font-weight: 700;
+        }
+
+        #title:before {
+            content: '\2014\2014\2014\2014';
+            position: absolute;
+            margin-left: -160px;
+            font-weight: 700;
+            color: #890000;
+        }
+
+        #title:after {
+            content: '\2014\2014\2014\2014';
+            position: absolute;
+            margin-left: 30px;
+            font-weight: 700;
+            color: #890000;
+        }
+
+        .show-gt-md {
+            display: none;
+        }
+
+        .quote {
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .info-section {
+            margin: 20px 0;
+            display: flex;
+            align-content: center;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .text-section {
+            font-family: 'Open Sans', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            flex-direction: column;
+            display: flex;
+            max-height: 50%;
+            padding: 0 20px;
+        }
+
+        .image-section {
+            padding: 0 20px;
+            box-sizing: border-box;
+            max-height: 50%;
+        }
+
+        .spacer {
+            display: flex;
+            flex-direction: column;
+            align-content: flex-end;
+            justify-content: flex-start;
+            align-items: flex-end;
+            flex: 20;
+        }
+
+        .bullet {
+            flex: 80;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-content: start;
+            align-items: start;
+        }
+
+        .bullet:before {
+            content: '\2014';
+            position: absolute;
+            margin-left: -60px;
+            font-weight: 700;
+            color: #890000;
+        }
+
+        .header-text {
+            font-weight: 700;
+        }
+
+        .detail-text {
+            padding-top: 20px;
+            font-weight: 300;
+        }
+
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer {
+            display: flex;
+            padding: 0 8px;
+            background-color: #efefef;
+            color: #555559;
+            font-weight: 400;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+        }
+
+        .sticky+.quote-outer-container {
+            padding-top: 130px !important;
+        }
+
+        .quote-outer-container {
+            background-color: rgb(255, 255, 255);
+            margin: 0px;
+            width: 100%;
+            flex-direction: column;
+            box-sizing: border-box;
+            display: flex;
+            max-width: 100%;
+            place-content: center space-around;
+            align-items: center;
+            padding: 24px 0;
+        }
+
+        .quote-inner-container {
+            flex-direction: column;
+            box-sizing: border-box;
+            display: flex;
+            max-width: 100%;
+            place-content: center space-between;
+            align-items: center;
+        }
+
+        /* Media Queries - all breakpoints taken from angular flex-layout
+         -> https://github.com/angular/flex-layout/wiki/Responsive-API
+
+xs	'screen and (max-width: 599px)'
+sm	'screen and (min-width: 600px) and (max-width: 959px)'
+md	'screen and (min-width: 960px) and (max-width: 1279px)'
+gt-xs	'screen and (min-width: 600px)'
+gt-sm	'screen and (min-width: 960px)'
+gt-md	'screen and (min-width: 1280px)'
+
+*/
+
+        @media screen and (max-width: 599px) {
+            #title:before {
+                content: '';
+                position: absolute;
+                margin-left: -160px;
+                font-weight: 700;
+                color: #890000;
+            }
+
+            #title:after {
+                content: '';
+                position: absolute;
+                margin-left: 30px;
+                font-weight: 700;
+                color: #890000;
+            }
+            .footer {
+                height: 36px;
+                font-size: 10px;
+            }
+            #title-container {
+                height: 48px;
+            }
+            .quote {
+                font-size: 32px;
+            }
+            .header-text,
+            .bullet,
+            #title {
+                font-size: 14px;
+            }
+            .info-section {
+                flex-direction: column;
+            }
+            .detail-text {
+                font-size: 12.5px;
+            }
+
+            .image-section div {
+                height: 215px;
+                width: 300px;
+            }
+        }
+
+        @media screen and (min-width: 600px) and (max-width: 959px) {
+            #title:before {
+                content: '\2014\2014';
+                position: absolute;
+                margin-left: -75px;
+                font-weight: 700;
+                color: #890000;
+            }
+
+            #title:after {
+                content: '\2014\2014';
+                position: absolute;
+                margin-left: 30px;
+                font-weight: 700;
+                color: #890000;
+            }
+            .quote {
+                font-size: 48px;
+            }
+            .header-text,
+            .bullet,
+            #title {
+                font-size: 21px;
+            }
+            .info-section {
+                flex-direction: column;
+            }
+
+            .detail-text {
+                font-size: 16px;
+            }
+            .image-section div {
+                height: 285px;
+                width: 400px;
+            }
+        }
+
+        @media screen and (min-width: 960px) and (max-width: 1279px) {
+            #title:before {
+                content: '\2014\2014';
+                position: absolute;
+                margin-left: -85px;
+                font-weight: 700;
+                color: #890000;
+            }
+
+            #title:after {
+                content: '\2014\2014';
+                position: absolute;
+                margin-left: 30px;
+                font-weight: 700;
+                color: #890000;
+            }
+            .quote {
+                font-size: 64px;
+            }
+            .header-text,
+            .bullet,
+            #title {
+                font-size: 28px;
+            }
+            .detail-text {
+                font-size: 21px;
+            }
+            .image-section div {
+                height: 360px;
+                width: 500px;
+            }
+        }
+
+        @media screen and (min-width: 600px) {
+
+            #title-container {
+                height: 64px;
+            }
+            .footer {
+                height: 48px;
+                font-size: 12px;
+            }
+        }
+
+        @media screen and (min-width: 960px) {
+            .info-section {
+                flex-direction: row;
+            }
+            .info-section.reverse {
+                flex-direction: row-reverse;
+                padding-right: 50px;
+            }
+        }
+
+        @media screen and (min-width: 1280px) {
+            #title-container {
+                height: 100px;
+            }
+            .show-gt-md {
+                display: flex;
+            }
+            .quote {
+                font-size: 75px;
+            }
+            .header-text,
+            .bullet,
+            #title {
+                font-size: 32px;
+            }
+            .footer {
+                height: 75px;
+                font-size: 19px;
+            }
+            .detail-text {
+                font-size: 24px;
+            }
+            .image-section div {
+                height: 360px;
+                width: 700px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <div id="main">
+        <div class="image-rows">
+            <div class="photo-row">
+                <img src="https://rawgit.com/james-knerr/59854a81e3b5c2fe11ec50fd35e58003/raw/e54aa886faacb5a6e71d11b2f04ce098942906ef/luke-1.jpeg">
+                <img src="https://rawgit.com/james-knerr/59854a81e3b5c2fe11ec50fd35e58003/raw/e54aa886faacb5a6e71d11b2f04ce098942906ef/luke-1.jpg">
+                <img src="https://rawgit.com/james-knerr/59854a81e3b5c2fe11ec50fd35e58003/raw/e54aa886faacb5a6e71d11b2f04ce098942906ef/luke-10.jpg">
+                <img src="https://rawgit.com/james-knerr/59854a81e3b5c2fe11ec50fd35e58003/raw/e54aa886faacb5a6e71d11b2f04ce098942906ef/luke-11.jpg">
+                <img src="https://rawgit.com/james-knerr/59854a81e3b5c2fe11ec50fd35e58003/raw/e54aa886faacb5a6e71d11b2f04ce098942906ef/luke-12.jpg">
+                <img src="https://rawgit.com/james-knerr/59854a81e3b5c2fe11ec50fd35e58003/raw/e54aa886faacb5a6e71d11b2f04ce098942906ef/luke-2.png">
+                <img src="https://rawgit.com/james-knerr/59854a81e3b5c2fe11ec50fd35e58003/raw/e54aa886faacb5a6e71d11b2f04ce098942906ef/luke-5.jpg">
+                <img src="https://rawgit.com/james-knerr/59854a81e3b5c2fe11ec50fd35e58003/raw/e54aa886faacb5a6e71d11b2f04ce098942906ef/luke-4.png">
+                <img src="https://rawgit.com/james-knerr/59854a81e3b5c2fe11ec50fd35e58003/raw/e54aa886faacb5a6e71d11b2f04ce098942906ef/luke-6.png">
+            </div>
+            <div class="photo-row show-gt-md">
+                <img src="https://rawgit.com/james-knerr/59854a81e3b5c2fe11ec50fd35e58003/raw/e54aa886faacb5a6e71d11b2f04ce098942906ef/luke-3.jpg">
+                <img src="https://rawgit.com/james-knerr/59854a81e3b5c2fe11ec50fd35e58003/raw/e54aa886faacb5a6e71d11b2f04ce098942906ef/luke-4.png">
+                <img src="https://rawgit.com/james-knerr/59854a81e3b5c2fe11ec50fd35e58003/raw/e54aa886faacb5a6e71d11b2f04ce098942906ef/luke-5.jpg">
+                <img src="https://rawgit.com/james-knerr/59854a81e3b5c2fe11ec50fd35e58003/raw/e54aa886faacb5a6e71d11b2f04ce098942906ef/luke-6.png">
+                <img src="https://rawgit.com/james-knerr/59854a81e3b5c2fe11ec50fd35e58003/raw/e54aa886faacb5a6e71d11b2f04ce098942906ef/luke-7.png">
+                <img src="https://rawgit.com/james-knerr/59854a81e3b5c2fe11ec50fd35e58003/raw/e54aa886faacb5a6e71d11b2f04ce098942906ef/luke-9.jpg">
+                <img src="https://rawgit.com/james-knerr/59854a81e3b5c2fe11ec50fd35e58003/raw/e54aa886faacb5a6e71d11b2f04ce098942906ef/luke-1.jpg">
+                <img src="https://rawgit.com/james-knerr/59854a81e3b5c2fe11ec50fd35e58003/raw/e54aa886faacb5a6e71d11b2f04ce098942906ef/luke-1.jpeg">
+                <img src="https://rawgit.com/james-knerr/59854a81e3b5c2fe11ec50fd35e58003/raw/e54aa886faacb5a6e71d11b2f04ce098942906ef/luke-10.jpg">
+            </div>
+        </div>
+        <div id="title-container">
+            <div id="title">Luke Skywalker (19 BBY - 34 ABY)</div>
+        </div>
+        <div class="quote-outer-container">
+            <div id="img-div" class="quote-inner-container">
+                <img id="image" style="padding-bottom: 12px;" height="92" width="92" src="https://vignette.wikia.nocookie.net/starwars/images/2/2f/Jedi_Order.svg/revision/latest/scale-to-width-down/480?cb=20081203045753"
+                />
+                <div id="img-caption" class="quote">"I am a Jedi, like my father before me."</div>
+            </div>
+        </div>
+        <div id="tribute-info" class="info-section">
+            <div class="text-section">
+                <div style="display: flex;">
+                    <div class="spacer"></div>
+                    <div class="bullet">
+                        <div class="header-text">Tattooine</div>
+                        <div class="detail-text">Luke yearned for adventure among the stars, but was stuck on the farm as
+                            his friends left to become star pilots at the Imperial Academy. Uncle Owen always seemed to need
+                            him for one more season, and Luke knew his efforts could be the difference between the farm succeeding
+                            or failing.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="image-section">
+                <div class="image-container">
+                    <img style="width: 100%; height: auto;" src="https://i1.wp.com/www.forkauaionline.com/wp-content/uploads/2015/08/tatooine.jpg">
+                </div>
+            </div>
+        </div>
+        <div id="tribute-info-2" class="info-section reverse">
+            <div class="text-section">
+                <div style="display: flex;">
+                    <div class="spacer"></div>
+                    <div class="bullet">
+                        <div class="header-text">Bespin</div>
+                        <div class="detail-text">On Bespin's Cloud City, Luke stumbled into a trap set by him by Vader, who
+                            sought to capture the young Jedi. Luke dueled Vader, but proved no match for the Sith Lord's
+                            Force powers and experience with a lightsaber.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="image-section">
+                <div class="image-container">
+                    <img style="width: 100%; height: auto;" src="https://vignette.wikia.nocookie.net/starwars/images/7/71/Lukevaderesb.png/revision/latest?cb=20130219045408">
+                </div>
+            </div>
+        </div>
+        <div id="tribute-info-3" class="info-section">
+            <div class="text-section">
+                <div style="display: flex;">
+                    <div class="spacer"></div>
+                    <div class="bullet">
+                        <div class="header-text">Death Star II</div>
+                        <div class="detail-text">Luke defeated Vader and slashed off his hand, and a pleased Sidious told
+                            him it was time for him to take his father's place as Sidious's new Sith apprentice. But Luke
+                            refused, casting his saber away and declaring that he was a Jedi, like his father before him.
+                            Sidious accepted this, but then blasted Luke with Force lightning.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="image-section">
+                <div class="image-container">
+                    <img style="width: 100%; height: auto;" src="https://uncommongeek.files.wordpress.com/2015/09/rotj-duel-750x319.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div style="align-self: center;">Additional Information: <a id="tribute-link" target="_blank" href="https://www.starwars.com/databank/luke-skywalker">https://www.starwars.com/databank/luke-skywalker</a></div>
+    </div>
+</body>
+
+</html>
