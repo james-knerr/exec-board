@@ -124,6 +124,7 @@
     <script>window.confetti = module.exports;</script>
     <script  type="text/javascript"> 
         document.addEventListener("DOMContentLoaded", function (event) {
+            document.getElementById('name').innerText = document.location.hash.substring(1);
             
 var duration = 30 * 1000;
 var animationEnd = Date.now() + duration;
@@ -159,7 +160,7 @@ function randomInRange(min, max) {
   }
 }());
       });
-     document.getElementById('name').innerText = document.location.hash.substring(1);
+     
     </script>
 </head>
 
