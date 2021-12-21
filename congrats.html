@@ -134,8 +134,8 @@
     <script  type="text/javascript"> 
         document.addEventListener("DOMContentLoaded", function (event) {
             var hashStr = document.location.hash.substring(1);
-            var nameContainerEl = document.getElementByClassName('name-container')[0];
-            var nameEl = document.getElementByClassName('name')[0];
+            var nameContainerEl = document.getElementsByClassName('name-container')[0];
+            var nameEl = document.getElementsByClassName('name')[0];
             nameEl.innerText = `${hashStr.charAt(0).toUpperCase()}${hashStr.substring(1)}`;
             for(let i=0; i<20; i++) {
                 nameContainerEl.appendChild(nameEl);
