@@ -12,6 +12,7 @@
             --dark-green: 22543D;
             --old-rose: #AC7B7D;
             --black: #1a202c;
+            --red: #890000;
             
             --light-green: rgba(39, 103, 73, 0.58);
         }
@@ -35,13 +36,6 @@
             flex-direction: column;
         }
 
-        .sticky {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 100;
-        }
-
         #title-container {
             flex-direction: row;
             box-sizing: border-box;
@@ -60,7 +54,7 @@
         }
 
         #title:before {
-            content: '\2014\2014\2014\2014';
+            content: '\2014\2014\2014\2014\2014\2014\2014\2014';
             position: absolute;
             margin-left: -160px;
             font-weight: 700;
@@ -68,108 +62,16 @@
         }
 
         #title:after {
-            content: '\2014\2014\2014\2014';
+            content: '\2014\2014\2014\2014\2014\2014\2014\2014';
             position: absolute;
             margin-left: 30px;
             font-weight: 700;
             color: var(--gold);
         }
-
-        .show-gt-md {
-            display: none;
-        }
-
         .quote {
             text-align: center;
             font-weight: 600;
         }
-
-        .info-section {
-            margin: 20px 0;
-            display: flex;
-            align-content: center;
-            justify-content: flex-start;
-            align-items: center;
-        }
-
-        .text-section {
-            font-family: 'Open Sans', sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-content: center;
-            justify-content: center;
-            align-items: center;
-            box-sizing: border-box;
-            flex-direction: column;
-            display: flex;
-            max-height: 50%;
-            padding: 0 20px;
-        }
-
-        .image-section {
-            padding: 0 20px;
-            box-sizing: border-box;
-            max-height: 50%;
-        }
-
-        .spacer {
-            display: flex;
-            flex-direction: column;
-            align-content: flex-end;
-            justify-content: flex-start;
-            align-items: flex-end;
-            flex: 20;
-        }
-
-        .bullet {
-            flex: 80;
-            display: flex;
-            flex-direction: column;
-            justify-content: start;
-            align-content: start;
-            align-items: start;
-        }
-
-        .bullet:before {
-            content: '\2014';
-            position: absolute;
-            margin-left: -60px;
-            font-weight: 700;
-            color: var(--gold);
-        }
-
-        .header-text {
-            font-weight: 700;
-        }
-
-        .detail-text {
-            padding-top: 20px;
-            font-weight: 300;
-        }
-
-        .image-container {
-            display: flex;
-            flex-direction: column;
-            align-content: center;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .footer {
-            display: flex;
-            padding: 0 8px;
-            background-color: #efefef;
-            color: #555559;
-            font-weight: 400;
-            justify-content: center;
-            align-content: center;
-            align-items: center;
-        }
-
-        .sticky+.quote-outer-container {
-            padding-top: 130px !important;
-        }
-
         .quote-outer-container {
             background-color: rgb(255, 255, 255);
             margin: 0px;
@@ -182,7 +84,6 @@
             align-items: center;
             padding: 24px 0;
         }
-
         .quote-inner-container {
             flex-direction: column;
             box-sizing: border-box;
@@ -191,18 +92,6 @@
             place-content: center space-between;
             align-items: center;
         }
-
-        /* Media Queries - all breakpoints taken from angular flex-layout
-         -> https://github.com/angular/flex-layout/wiki/Responsive-API
-
-xs	'screen and (max-width: 599px)'
-sm	'screen and (min-width: 600px) and (max-width: 959px)'
-md	'screen and (min-width: 960px) and (max-width: 1279px)'
-gt-xs	'screen and (min-width: 600px)'
-gt-sm	'screen and (min-width: 960px)'
-gt-md	'screen and (min-width: 1280px)'
-
-*/
 
         @media screen and (max-width: 599px) {
             #title:before {
@@ -220,31 +109,14 @@ gt-md	'screen and (min-width: 1280px)'
                 font-weight: 700;
                 color: var(--gold);
             }
-            .footer {
-                height: 36px;
-                font-size: 10px;
-            }
             #title-container {
                 height: 48px;
             }
             .quote {
                 font-size: 32px;
             }
-            .header-text,
-            .bullet,
             #title {
                 font-size: 14px;
-            }
-            .info-section {
-                flex-direction: column;
-            }
-            .detail-text {
-                font-size: 12.5px;
-            }
-
-            .image-section div {
-                height: 215px;
-                width: 300px;
             }
         }
 
@@ -267,21 +139,8 @@ gt-md	'screen and (min-width: 1280px)'
             .quote {
                 font-size: 48px;
             }
-            .header-text,
-            .bullet,
             #title {
                 font-size: 21px;
-            }
-            .info-section {
-                flex-direction: column;
-            }
-
-            .detail-text {
-                font-size: 16px;
-            }
-            .image-section div {
-                height: 285px;
-                width: 400px;
             }
         }
 
@@ -304,38 +163,14 @@ gt-md	'screen and (min-width: 1280px)'
             .quote {
                 font-size: 64px;
             }
-            .header-text,
-            .bullet,
             #title {
                 font-size: 28px;
-            }
-            .detail-text {
-                font-size: 21px;
-            }
-            .image-section div {
-                height: 360px;
-                width: 500px;
             }
         }
 
         @media screen and (min-width: 600px) {
-
             #title-container {
                 height: 64px;
-            }
-            .footer {
-                height: 48px;
-                font-size: 12px;
-            }
-        }
-
-        @media screen and (min-width: 960px) {
-            .info-section {
-                flex-direction: row;
-            }
-            .info-section.reverse {
-                flex-direction: row-reverse;
-                padding-right: 50px;
             }
         }
 
@@ -343,27 +178,11 @@ gt-md	'screen and (min-width: 1280px)'
             #title-container {
                 height: 100px;
             }
-            .show-gt-md {
-                display: flex;
-            }
             .quote {
                 font-size: 75px;
             }
-            .header-text,
-            .bullet,
             #title {
                 font-size: 32px;
-            }
-            .footer {
-                height: 75px;
-                font-size: 19px;
-            }
-            .detail-text {
-                font-size: 24px;
-            }
-            .image-section div {
-                height: 360px;
-                width: 700px;
             }
         }
         .banner {
@@ -388,74 +207,13 @@ gt-md	'screen and (min-width: 1280px)'
         <div class="banner"></div>
         <div class="snowflakes"></div>
         <div id="title-container">
-            <div id="title">Luke Skywalker (19 BBY - 34 ABY)</div>
+            <div id="title">Exec Board Christmas 2021</div>
         </div>
         <div class="quote-outer-container">
             <div id="img-div" class="quote-inner-container">
-                <img id="image" style="padding-bottom: 12px;" height="92" width="92" src="https://vignette.wikia.nocookie.net/starwars/images/2/2f/Jedi_Order.svg/revision/latest/scale-to-width-down/480?cb=20081203045753"
-                />
-                <div id="img-caption" class="quote">"I am a Jedi, like my father before me."</div>
+                <div id="img-caption" class="quote">"Congratulations!</div>
             </div>
         </div>
-        <div id="tribute-info" class="info-section">
-            <div class="text-section">
-                <div style="display: flex;">
-                    <div class="spacer"></div>
-                    <div class="bullet">
-                        <div class="header-text">Tattooine</div>
-                        <div class="detail-text">Luke yearned for adventure among the stars, but was stuck on the farm as
-                            his friends left to become star pilots at the Imperial Academy. Uncle Owen always seemed to need
-                            him for one more season, and Luke knew his efforts could be the difference between the farm succeeding
-                            or failing.</div>
-                    </div>
-                </div>
-            </div>
-            <div class="image-section">
-                <div class="image-container">
-                    <img style="width: 100%; height: auto;" src="https://i1.wp.com/www.forkauaionline.com/wp-content/uploads/2015/08/tatooine.jpg">
-                </div>
-            </div>
-        </div>
-        <div id="tribute-info-2" class="info-section reverse">
-            <div class="text-section">
-                <div style="display: flex;">
-                    <div class="spacer"></div>
-                    <div class="bullet">
-                        <div class="header-text">Bespin</div>
-                        <div class="detail-text">On Bespin's Cloud City, Luke stumbled into a trap set by him by Vader, who
-                            sought to capture the young Jedi. Luke dueled Vader, but proved no match for the Sith Lord's
-                            Force powers and experience with a lightsaber.</div>
-                    </div>
-                </div>
-            </div>
-            <div class="image-section">
-                <div class="image-container">
-                    <img style="width: 100%; height: auto;" src="https://vignette.wikia.nocookie.net/starwars/images/7/71/Lukevaderesb.png/revision/latest?cb=20130219045408">
-                </div>
-            </div>
-        </div>
-        <div id="tribute-info-3" class="info-section">
-            <div class="text-section">
-                <div style="display: flex;">
-                    <div class="spacer"></div>
-                    <div class="bullet">
-                        <div class="header-text">Death Star II</div>
-                        <div class="detail-text">Luke defeated Vader and slashed off his hand, and a pleased Sidious told
-                            him it was time for him to take his father's place as Sidious's new Sith apprentice. But Luke
-                            refused, casting his saber away and declaring that he was a Jedi, like his father before him.
-                            Sidious accepted this, but then blasted Luke with Force lightning.</div>
-                    </div>
-                </div>
-            </div>
-            <div class="image-section">
-                <div class="image-container">
-                    <img style="width: 100%; height: auto;" src="https://uncommongeek.files.wordpress.com/2015/09/rotj-duel-750x319.jpg">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="footer">
-        <div style="align-self: center;">Additional Information: <a id="tribute-link" target="_blank" href="https://www.starwars.com/databank/luke-skywalker">https://www.starwars.com/databank/luke-skywalker</a></div>
     </div>
 </body>
 
