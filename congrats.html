@@ -125,7 +125,7 @@
     <script  type="text/javascript"> 
         document.addEventListener("DOMContentLoaded", function (event) {
             
-var duration = 15 * 1000;
+var duration = 30 * 1000;
 var animationEnd = Date.now() + duration;
 var skew = 1;
 
@@ -147,7 +147,7 @@ function randomInRange(min, max) {
       // since particles fall down, skew start toward the top
       y: (Math.random() * skew) - 0.2
     },
-    colors: ['#ffffff'],
+    colors: ['#ffffff', '#b4a252'],
     shapes: ['circle'],
     gravity: randomInRange(0.4, 0.6),
     scalar: randomInRange(0.4, 1),
