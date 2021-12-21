@@ -39,6 +39,7 @@
         }
 
         #title-container {
+            z-index: 2;
             overflow: hidden;
             flex-direction: row;
             box-sizing: border-box;
@@ -72,6 +73,7 @@
             font-size: 100px;
         }
         .quote-outer-container {
+            z-index: 2;
             background-color: var(--black);
             margin: 0px;
             width: 100%;
@@ -92,6 +94,7 @@
             align-items: center;
         }
         .banner {
+            z-index: 2;
             height: 20vh;
             width: 100%;
             overflow: hidden;
@@ -106,6 +109,8 @@
             background-repeat: repeat;
         }
         .name-container {
+            position: absolute;
+            z-index: 1;
             display: flex;
             overflow: hidden;
             flex-wrap: wrap;
