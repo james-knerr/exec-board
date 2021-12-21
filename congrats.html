@@ -141,9 +141,7 @@
             var nameEl = document.getElementsByClassName('name')[0];
             nameEl.innerText = `${hashStr.charAt(0).toUpperCase()}${hashStr.substring(1)}`;
             for(let i=0; i<40; i++) {
-                console.log(nameContainerEl);
-                console.log(nameEl);
-                nameContainerEl.appendChild(nameEl);
+                nameContainerEl.appendChild(nameEl.cloneNode());
             }
             
 var duration = 30 * 1000;
