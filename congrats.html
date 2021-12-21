@@ -52,28 +52,21 @@
         #title {
             font-weight: 700;
         }
-
-        #title:before {
-            content: '\2014\2014\2014\2014\2014\2014\2014\2014';
-            position: absolute;
-            margin-left: -160px;
+        
+        .dash {
             font-weight: 700;
             color: var(--gold);
-        }
-
-        #title:after {
-            content: '\2014\2014\2014\2014\2014\2014\2014\2014';
-            position: absolute;
-            margin-left: 30px;
-            font-weight: 700;
-            color: var(--gold);
+            height: 100%;
+            margin-top: 45px;
+            margin-left: 12px;
+            margin-right: 12px;
         }
         .quote {
             text-align: center;
             font-weight: 600;
         }
         .quote-outer-container {
-            background-color: rgb(255, 255, 255);
+            background-color: #276749;
             margin: 0px;
             width: 100%;
             flex-direction: column;
@@ -94,20 +87,8 @@
         }
 
         @media screen and (max-width: 599px) {
-            #title:before {
-                content: '';
-                position: absolute;
-                margin-left: -160px;
-                font-weight: 700;
-                color: var(--gold);
-            }
-
-            #title:after {
-                content: '';
-                position: absolute;
-                margin-left: 30px;
-                font-weight: 700;
-                color: var(--gold);
+            .dash {
+                margin-top: 30px;
             }
             #title-container {
                 height: 48px;
@@ -121,21 +102,6 @@
         }
 
         @media screen and (min-width: 600px) and (max-width: 959px) {
-            #title:before {
-                content: '\2014\2014\2014\2014\2014\2014\2014\2014';
-                position: absolute;
-                margin-left: -75px;
-                font-weight: 700;
-                color: var(--gold);
-            }
-
-            #title:after {
-                content: '\2014\2014\2014\2014\2014\2014\2014\2014';
-                position: absolute;
-                margin-left: 30px;
-                font-weight: 700;
-                color: var(--gold);
-            }
             .quote {
                 font-size: 48px;
             }
@@ -145,21 +111,6 @@
         }
 
         @media screen and (min-width: 960px) and (max-width: 1279px) {
-            #title:before {
-                content: '\2014\2014\2014\2014\2014\2014\2014\2014';
-                position: absolute;
-                margin-left: -85px;
-                font-weight: 700;
-                color: var(--gold);
-            }
-
-            #title:after {
-                content: '\2014\2014\2014\2014\2014\2014\2014\2014';
-                position: absolute;
-                margin-left: 30px;
-                font-weight: 700;
-                color: var(--gold);
-            }
             .quote {
                 font-size: 64px;
             }
@@ -177,6 +128,9 @@
         @media screen and (min-width: 1280px) {
             #title-container {
                 height: 100px;
+            }
+            .dash {
+                margin-top: 75px;
             }
             .quote {
                 font-size: 75px;
@@ -207,7 +161,9 @@
         <div class="banner"></div>
         <div class="snowflakes"></div>
         <div id="title-container">
+            <div class="dash">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</div>
             <div id="title">Exec Board Christmas 2021</div>
+            <div class="dash">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</div>
         </div>
         <div class="quote-outer-container">
             <div id="img-div" class="quote-inner-container">
