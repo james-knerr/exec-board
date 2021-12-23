@@ -155,8 +155,7 @@
             }
             for(let i=0; i<200; i++) {   
                 var nameContainerElCopy = nameContainerEl.cloneNode(true);
-                var isMarginNegative = Math.floor(Math.random()*2) < 1; 
-                nameContainerElCopy.style.marginLeft = `${(isMarginNegative ? -1 : 1) * Math.floor(Math.random()*21)}px`;
+                nameContainerElCopy.style.marginLeft = `(-1 * Math.floor(Math.random()*31)}px`;
                 mainEl.appendChild(nameContainerElCopy);
             }
             
@@ -212,8 +211,10 @@ function randomInRange(min, max) {
                 <div id="img-caption" class="quote">Congraturlations!</div>
             </div>
         </div>
-        <div class="name-container">
-            <div class="name"></div>
+        <div class="name-container-parent">
+            <div class="name-container">
+                <div class="name"></div>
+            </div>
         </div>
     </div>
 </body>
